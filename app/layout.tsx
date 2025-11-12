@@ -1,7 +1,17 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../src/app/styles/globals.css";
+import App from "@/app";
 
+if (
+  process.env.NEXT_RUNTIME === 'nodejs' &&
+  process.env.NODE_ENV !== 'production' &&
+  process.env.NEXT_PUBLIC_MSW_ENABLED !== 'false'
+) {
+  import('@/shared/config/mocks/server').then(({ server }) => {
+    server.listen()
+  })
+}
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +38,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <App>{children}</App>
       </body>
     </html>
   );
