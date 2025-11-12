@@ -5,14 +5,12 @@ import CheckBox from "@/shared/ui/CheckBox/CheckBox";
 import { Text } from "@/shared/ui/Text/Text";
 
 export default async function Home() {
-  // 서버 컴포넌트에서 fetch 호출
   const favorites = await getFavoritesList({
-    email: "test@example.com", // 상수 처리 가능
+    email: "test@example.com",
     page: "1",
   });
 
   console.log(favorites);
-
   return (
     <>
       <Text weight="bold" size="1" type="title">123</Text>
