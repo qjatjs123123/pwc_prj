@@ -11,13 +11,11 @@ export function OverlayProvider({ children }: OverlayProviderProps) {
   const [Component, setComponent] = useState<ComponentType | null>(null);
 
   const open = useCallback((Comp: ComponentType) => {
-    console.log("@")
     setComponent(() => Comp);
     setIsOpen(true);
   }, []);
 
   const close = useCallback(() => {
-    console.log("1");
     setIsOpen(false);
     setComponent(null);
   }, []);

@@ -3,6 +3,8 @@
 import { Input } from "@/shared/ui/Input/Input";
 import { CompanySuggest } from "./CompanySuggest";
 import { useState } from "react";
+import { ChevronDownIcon } from "../../../../shared/ui/Icon/ChevronDownIcon";
+import { ChevronUpIcon } from "@/shared/ui/Icon/ChevronUpIcon";
 
 interface SearchDropDownProps {
   value: string;
@@ -10,19 +12,21 @@ interface SearchDropDownProps {
 }
 
 export function SearchDropDown({ value, onChange }: SearchDropDownProps) {
-  const [showList, setShowList] = useState(true);
+  const [showList, setShowList] = useState(false);
 
   return (
     <div className="relative">
-      <Input
-        value={value}
-        placeholder="관심기업 입력해주세요"
-        onChange={(e) => {
-          onChange(e.target.value);
-          setShowList(true);
-        }}
-      />
-
+      <div className="relative w-full">
+        <Input
+          value={value}
+          placeholder="관심기업 입력해주세요"
+          onChange={(e) => {
+            onChange(e.target.value);
+            setShowList(true);
+          }}
+        />
+        <WrapperIcon isDown={showList} />
+      </div>
       {showList && (
         <CompanySuggest
           value={value}
@@ -30,6 +34,14 @@ export function SearchDropDown({ value, onChange }: SearchDropDownProps) {
           setShowList={setShowList}
         />
       )}
+    </div>
+  );
+}
+
+function WrapperIcon({ isDown }: { isDown: boolean }) {
+  return (
+    <div className="absolute top-1/2 transform -translate-y-1/2 right-5 ">
+      {isDown ? <ChevronDownIcon /> : <ChevronUpIcon />}
     </div>
   );
 }
