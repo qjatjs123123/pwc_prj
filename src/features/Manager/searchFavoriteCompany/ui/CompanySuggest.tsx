@@ -1,5 +1,6 @@
 import { useGetCompanies } from "@/entities/Manager";
 import { useMemo } from "react";
+import { getCompanySuggestions } from "../lib/filter";
 
 interface CompanySuggestProps {
   value: string;
@@ -13,14 +14,7 @@ export function CompanySuggest({
   setShowList,
 }: CompanySuggestProps) {
   const { data } = useGetCompanies();
-
-  const filtered = useMemo(() => {
-    if (!data?.companies || value.trim() === "") return [];
-    return data.companies
-      .filter((c) => c.toLowerCase().includes(value.toLowerCase()))
-      .slice(0, 5);
-  }, [value, data]);
-
+  const filtered = getCompanySuggestions(value, data.companies);
   const isExist = filtered.length > 0;
 
   return (
