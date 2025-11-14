@@ -11,6 +11,7 @@ export interface CheckContextType {
   isAllChecked: boolean;
   isChecked: (a: number) => boolean;
   checkedIds: number[];
+  setCheckedIds: (a: number[]) => void;
 }
 
 interface CheckProviderProps {
@@ -23,12 +24,12 @@ export const CheckContext = createContext<CheckContextType | undefined>(
 );
 
 export const CheckProvider = ({ children, data }: CheckProviderProps) => {
-  const { checkedItem, checkedAll, isAllChecked, isChecked, checkedIds } =
+  const { checkedItem, checkedAll, isAllChecked, isChecked, checkedIds, setCheckedIds } =
     useCheckService(data);
 
   return (
     <CheckContext.Provider
-      value={{ checkedItem, checkedAll, isAllChecked, isChecked, checkedIds }}
+      value={{ checkedItem, checkedAll, isAllChecked, isChecked, checkedIds, setCheckedIds }}
     >
       {children}
     </CheckContext.Provider>

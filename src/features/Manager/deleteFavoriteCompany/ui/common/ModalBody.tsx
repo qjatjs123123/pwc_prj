@@ -1,8 +1,11 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { Text } from "@/shared/ui/Text/Text";
+import { useCheckContext } from "@/features/Manager/checkFavoriteCompany";
 
-export function ModalBody({ count }: { count: number }) {
+export function ModalBody() {
+  const { checkedIds } = useCheckContext();
+  const count = checkedIds.length
 
   return (
     <>

@@ -2,8 +2,7 @@ import { Modal } from "@/shared/ui/Modal/Modal";
 import { ModalBody } from "./ModalBody";
 import { ModalHeader } from "./ModalHeader";
 import { ModalFooter } from "./ModalFooter";
-export function ModalContainer({ checkedIds }: { checkedIds: number[] }) {
-
+export function ModalContainer() {
   return (
     <Modal>
       <div
@@ -12,8 +11,8 @@ export function ModalContainer({ checkedIds }: { checkedIds: number[] }) {
         onClick={(e) => e.stopPropagation()}
       >
         <ModalHeader />
-        <ModalBody count={checkedIds.length}/>
-        <ModalFooter checkedIds={checkedIds}/>
+        <ModalBody />
+        <ModalFooter />
       </div>
     </Modal>
   );

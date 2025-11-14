@@ -7,6 +7,7 @@ import { postFavorite } from "../api/post-favorite";
 import { useToastService } from "@/shared/ui/Toast/model/useToastService";
 import { AxiosError } from "@/shared/model/AxiosError";
 import { useGetFavoriteList } from "@/entities/Manager";
+import { useCheckContext } from "../../checkFavoriteCompany";
 
 export function usePostFavoriteCompany() {
   const { getValues } = useFormContext<FavoriteCompanyFormProps>();

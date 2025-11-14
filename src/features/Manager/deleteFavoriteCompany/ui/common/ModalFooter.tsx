@@ -1,11 +1,11 @@
 import { Button } from "@/shared/ui/Button/Button";
-import { useDeleteFavoriteCompany } from "../../model/useDeleteFavoriteCompany";
+import { useDeleteFavoriteCompanyList } from "../../model/useDeleteFavoriteCompanyList";
 import { useOverlay } from "@/shared/model/useOverlay";
 
-export function ModalFooter({ checkedIds }: { checkedIds: number[] }) {
-  const mutation = useDeleteFavoriteCompany(checkedIds);
+export function ModalFooter() {
+  const mutation = useDeleteFavoriteCompanyList();
   const { close } = useOverlay();
-
+  
   return (
     <div className="flex flex-col w-full gap-2 mt-[10px]">
       <Button

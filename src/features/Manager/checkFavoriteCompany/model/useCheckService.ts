@@ -24,5 +24,12 @@ export function useCheckService(data: FavoriteCompanyList) {
 
   const isChecked = (id: number) => checkedIds.includes(id);
 
-  return { checkedItem, checkedAll, isAllChecked, isChecked, checkedIds };
+  return {
+    checkedItem,
+    checkedAll,
+    isAllChecked,
+    isChecked,
+    checkedIds,
+    setCheckedIds,
+  };
 }

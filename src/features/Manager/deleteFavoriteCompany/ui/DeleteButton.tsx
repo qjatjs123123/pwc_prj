@@ -5,17 +5,24 @@ import { TrashIcon } from "@/shared/ui/Icon/TrashIcon";
 import { Text } from "@/shared/ui/Text/Text";
 import { useCheckContext } from "../../checkFavoriteCompany";
 import { DeleteModalEntry } from "./DeleteModalEntry";
+import { CheckContext } from "../../checkFavoriteCompany/ui/CheckProvider";
 
 export function DeleteButton() {
   const { open } = useOverlay();
-  const { checkedIds } = useCheckContext();
-
+  const contextValue = useCheckContext();
+  
   return (
     <Button
       type="primary"
       style="outline"
       className="gap-2"
-      onClick={() => open(() => <DeleteModalEntry checkedIds={checkedIds}/>)}
+      onClick={() =>
+        open(() => (
+          <CheckContext.Provider value={contextValue}> 
+            <DeleteModalEntry />
+          </CheckContext.Provider>
+        ))
+      }
     >
       <TrashIcon color="var(--color-label-800)" />
       <Text>관심기업 삭제</Text>

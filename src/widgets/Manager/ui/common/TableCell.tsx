@@ -3,8 +3,8 @@ import CheckBox from "@/shared/ui/CheckBox/CheckBox";
 import { TrashIcon } from "@/shared/ui/Icon/TrashIcon";
 import { Table } from "@/shared/ui/Table/Table";
 import { FavoriteCompany } from "@/entities/Manager";
-import { useDeleteFavoriteCompany } from "@/features/Manager/deleteFavoriteCompany/model/useDeleteFavoriteCompany";
 import { Button } from "@/shared/ui/Button/Button";
+import { useDeleteFavoriteCompanyOne } from "@/features/Manager/deleteFavoriteCompany";
 
 interface FavoriteCompanyCellProps {
   item: FavoriteCompany;
@@ -17,7 +17,7 @@ export const TableCell = React.memo(function TableCell({
   checked,
   onChange,
 }: FavoriteCompanyCellProps) {
-  const mutation = useDeleteFavoriteCompany([item.id]);
+  const mutation = useDeleteFavoriteCompanyOne();
 
   return (
     <Table.Row checked={checked}>
@@ -27,7 +27,12 @@ export const TableCell = React.memo(function TableCell({
       <Table.Cell>{item.company_name}</Table.Cell>
       <Table.Cell>{item.created_at}</Table.Cell>
       <Table.Cell>
-        <Button className="!p-0 !border-0" onClick={() => mutation.mutate()}>
+        <Button
+          className="!p-0 !border-0"
+          onClick={() => {
+            mutation.mutate(item.id);
+          }}
+        >
           <TrashIcon />
         </Button>
       </Table.Cell>

@@ -1,9 +1,11 @@
 import { useToastService } from "@/shared/ui/Toast/model/useToastService";
 import { ModalContainer } from "./common/ModalContainer";
 import { useEffect } from "react";
+import { useCheckContext } from "../../checkFavoriteCompany";
 
-export function DeleteModalEntry({ checkedIds }: { checkedIds: number[] }) {
+export function DeleteModalEntry() {
   const toast = useToastService();
+  const { checkedIds } = useCheckContext();
   const isEntry = checkedIds.length > 0;
 
   useEffect(() => {
@@ -12,5 +14,5 @@ export function DeleteModalEntry({ checkedIds }: { checkedIds: number[] }) {
     }
   }, [checkedIds, toast]);
 
-  return isEntry ? <ModalContainer checkedIds={checkedIds} /> : null;
+  return isEntry ? <ModalContainer /> : null;
 }
