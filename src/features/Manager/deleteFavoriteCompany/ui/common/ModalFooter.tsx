@@ -1,8 +1,11 @@
 import { Button } from "@/shared/ui/Button/Button";
 import { useDeleteFavoriteCompany } from "../../model/useDeleteFavoriteCompany";
+import { useOverlay } from "@/shared/model/useOverlay";
 
 export function ModalFooter() {
   const mutation = useDeleteFavoriteCompany();
+  const { close } = useOverlay();
+
   return (
     <div className="flex flex-col w-full gap-2 mt-[10px]">
       <Button
@@ -12,7 +15,11 @@ export function ModalFooter() {
       >
         삭제
       </Button>
-      <Button style="outline" className="justify-center">
+      <Button
+        style="outline"
+        className="justify-center"
+        onClick={() => close()}
+      >
         취소
       </Button>
     </div>
