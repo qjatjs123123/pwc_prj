@@ -6,6 +6,10 @@
   --color-component-dark: #23272e;
   --color-background-modal: #acacae;
 
+  /* input */
+  --input-color: #ffb27f;
+  --input-placeholder: #aaa;
+
   /* font */
   --text-body-1: 1rem;
   --text-body-2: .9375rem;
@@ -16,6 +20,9 @@
   --text-title-4: 1.125rem;
   --text-caption-1: 0.75rem;
 
+
+  /* font color */
+  --text-color-100: #3E3E3E;
 
   /* button color */
   --color-secondary-300:  #333333;

@@ -7,10 +7,10 @@ export function Modal({ children }: { children: ReactNode }) {
   return (
     <PortalConsumer>
       <div
-        className="fixed inset-0 bg-[var(--color-background-modal)]/60 flex items-center justify-center backdrop-blur-[2px]"
+        className="fixed inset-0 bg-[var(--color-background-modal)]/60 flex items-center justify-center backdrop-blur-[2px] z-15"
         onClick={close}
       >
-        <div className="bg-white p-6 rounded-2xl shadow-xl">{children}</div>
+        {children}
       </div>
     </PortalConsumer>
   );

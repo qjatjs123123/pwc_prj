@@ -11,11 +11,13 @@ export function OverlayProvider({ children }: OverlayProviderProps) {
   const [Component, setComponent] = useState<ComponentType | null>(null);
 
   const open = useCallback((Comp: ComponentType) => {
+    console.log("@")
     setComponent(() => Comp);
     setIsOpen(true);
   }, []);
 
   const close = useCallback(() => {
+    console.log("1");
     setIsOpen(false);
     setComponent(null);
   }, []);
@@ -23,14 +25,7 @@ export function OverlayProvider({ children }: OverlayProviderProps) {
   return (
     <OverlayContext.Provider value={{ isOpen, open, close }}>
       {children}
-
-      {isOpen && (
-        <div className="fixed inset-0 bg-[var(--color-background-modal)]/60 flex items-center justify-center backdrop-blur-[2px]">
-          <div className="bg-white p-6 rounded-2xl shadow-xl">
-            {Component && <Component />}
-          </div>
-        </div>
-      )}
+      {isOpen && Component && <Component />}
     </OverlayContext.Provider>
   );
 }
