@@ -1,3 +1,3 @@
-import { favoritesHandler } from "@/entities/Manager";
+import { companiesHandler, favoritesHandler } from "@/entities/Manager";
 import { setupWorker } from "msw/browser";
-export const worker = setupWorker(...favoritesHandler);
+export const worker = setupWorker(...favoritesHandler, ...companiesHandler);

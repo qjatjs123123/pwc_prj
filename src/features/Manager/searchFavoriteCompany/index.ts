@@ -1,1 +1,1 @@
-export { SearchFavoriteCompanyInput } from "./ui/SearchFavoriteCompanyInput";
+export { SearchDropDown } from "./ui/SearchDropDown";
