@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../src/app/styles/globals.css";
 import App from "@/app";
-import { Layout } from "@/shared/ui/Layout/Layout";
 import { Toast } from "@/shared/ui/Toast/ui/Toast";
+import { Layout } from "@/shared/ui/Layout/Layout";
+import { Header } from "@/widgets/Header";
 
 // if (
 //   process.env.NEXT_RUNTIME === "nodejs" &&
@@ -41,7 +42,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <App>
-          <Layout>{children}</Layout>
+          <Layout>
+            <Header />
+          </Layout>
+          {children}
           <Toast />
         </App>
       </body>
