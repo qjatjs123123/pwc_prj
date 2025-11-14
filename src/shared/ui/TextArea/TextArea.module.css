@@ -19,10 +19,6 @@
   /* 크기 조절 비활성 */
 }
 
-.textarea::placeholder {
-  color: var(--input-placeholder);
-  /* 플레이스홀더 색상 */
-}
 
 .textarea:focus {
   outline: none;

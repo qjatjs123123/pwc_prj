@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../src/app/styles/globals.css";
 import App from "@/app";
 import { Layout } from "@/shared/ui/Layout/Layout";
+import { Toast } from "@/shared/ui/Toast/ui/Toast";
 
 if (
   process.env.NEXT_RUNTIME === "nodejs" &&
@@ -41,6 +42,7 @@ export default function RootLayout({
       >
         <App>
           <Layout>{children}</Layout>
+          <Toast />
         </App>
       </body>
     </html>
