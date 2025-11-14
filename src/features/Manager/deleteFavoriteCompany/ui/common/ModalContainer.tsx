@@ -13,7 +13,7 @@ export function ModalContainer({ checkedIds }: { checkedIds: number[] }) {
       >
         <ModalHeader />
         <ModalBody count={checkedIds.length}/>
-        <ModalFooter />
+        <ModalFooter checkedIds={checkedIds}/>
       </div>
     </Modal>
   );

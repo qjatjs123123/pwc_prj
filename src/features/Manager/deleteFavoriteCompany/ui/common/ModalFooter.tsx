@@ -2,8 +2,8 @@ import { Button } from "@/shared/ui/Button/Button";
 import { useDeleteFavoriteCompany } from "../../model/useDeleteFavoriteCompany";
 import { useOverlay } from "@/shared/model/useOverlay";
 
-export function ModalFooter() {
-  const mutation = useDeleteFavoriteCompany();
+export function ModalFooter({ checkedIds }: { checkedIds: number[] }) {
+  const mutation = useDeleteFavoriteCompany(checkedIds);
   const { close } = useOverlay();
 
   return (

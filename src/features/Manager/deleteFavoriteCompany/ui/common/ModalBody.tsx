@@ -1,7 +1,9 @@
+'use client'
 import Image from "next/image";
 import { Text } from "@/shared/ui/Text/Text";
 
 export function ModalBody({ count }: { count: number }) {
+
   return (
     <>
       <Image src="/close.png" width={80} height={80} alt="close" />
