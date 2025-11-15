@@ -5,6 +5,7 @@ import { TableContent } from "./common/TableContent";
 import { TablePagination } from "./common/TablePagination";
 
 import { useGetFavoriteList } from "@/entities/Manager";
+import { TableEntry } from "./common/TableEntry";
 
 export function TableContainer() {
   const { data } = useGetFavoriteList();
@@ -13,9 +14,8 @@ export function TableContainer() {
     <>
       <CheckProvider data={data}>
         <TableTitle />
-        <TableContent data={data} />
+        <TableEntry data={data}/>
       </CheckProvider>
-      <TablePagination />
     </>
   );
 }

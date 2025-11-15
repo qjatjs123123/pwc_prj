@@ -16,6 +16,8 @@ export function DetailError({ resetErrorBoundary, favoriteId }: DetailErrorProps
 
   return (
     <ErrorMessage
+      src="/empty-2-spot-apng.png"
+      title="다시 시도해주세요"
       description={
         <div className="flex flex-col">
           <Text
