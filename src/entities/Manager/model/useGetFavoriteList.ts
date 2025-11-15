@@ -13,6 +13,6 @@ export function useGetFavoriteList() {
   return useSuspenseQuery({
     queryKey: ["favorite", page],
     queryFn: () => getFavoritesList({ page, email: EMAIL }),
-    staleTime: 60_000,
+    retry:3
   });
 }

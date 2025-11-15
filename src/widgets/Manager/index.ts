@@ -1,3 +1,3 @@
-export { TableContainer } from './ui/TableContainer';
+export { TableEntry } from './ui/TableEntry';
 
 

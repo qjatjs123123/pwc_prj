@@ -14,7 +14,7 @@ interface FavoriteCompanyCellProps {
   onChange: (id: number) => void;
 }
 
-export const TableCell = React.memo(function TableCell({
+export const TableRow = React.memo(function TableRow({
   item,
   checked,
   onChange,

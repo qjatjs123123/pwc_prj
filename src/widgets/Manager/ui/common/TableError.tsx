@@ -5,12 +5,12 @@ import { ErrorMessage } from "@/shared/ui/Error/ErrorMessage";
 import { Text } from "@/shared/ui/Text/Text";
 import { useQueryClient } from "@tanstack/react-query";
 
-interface DetailErrorProps {
+interface FavoriteListErrorProps {
   resetErrorBoundary: (...args: Array<unknown>) => void; 
-  favoriteId: number
+  page: string
 }
 
-export function DetailError({ resetErrorBoundary, favoriteId }: DetailErrorProps) {
+export function TableError({ resetErrorBoundary, page }: FavoriteListErrorProps) {
   const queryClient = useQueryClient();
 
   return (
@@ -33,7 +33,7 @@ export function DetailError({ resetErrorBoundary, favoriteId }: DetailErrorProps
             size="3"
             className="text-[var(--text-color-100)]"
           >
-            관심기업 메모를 불러오지 못했어요
+            관심기업 목록을 불러오지 못했어요
           </Text>
         </div>
       }
@@ -43,7 +43,7 @@ export function DetailError({ resetErrorBoundary, favoriteId }: DetailErrorProps
           onClick={() => {
             resetErrorBoundary();
             queryClient.removeQueries({
-              queryKey: ["favorite-detail", favoriteId],
+              queryKey: ["favorite", page],
               exact: true,
             });
           }}

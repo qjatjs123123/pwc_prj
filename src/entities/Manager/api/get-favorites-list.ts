@@ -10,6 +10,5 @@ export async function getFavoritesList({ email, page }: FetchFavoritesParams) {
   const response = await api.get<FavoriteCompanyListDTO>("/favorites", {
     params: { email, page },
   });
-
   return mapFavoritesList(response.data);
 }
