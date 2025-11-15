@@ -1,7 +1,7 @@
 "use client";
 
 import { Input } from "@/shared/ui/Input/Input";
-import { CompanySuggest } from "./CompanySuggest";
+import { CompanySuggest } from "./common/CompanySuggest";
 import { Suspense, useState } from "react";
 import { ChevronDownIcon } from "../../../../shared/ui/Icon/ChevronDownIcon";
 import { ChevronUpIcon } from "@/shared/ui/Icon/ChevronUpIcon";

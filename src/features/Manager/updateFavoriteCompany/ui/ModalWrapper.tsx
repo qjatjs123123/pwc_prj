@@ -1,14 +1,12 @@
 import { useGetFavoriteDetail } from "@/entities/Manager/model/useGetFavoriteDetail";
-import { Button } from "@/shared/ui/Button/Button";
-import { EditIcon } from "@/shared/ui/Icon/EditIcon";
 import { Text } from "@/shared/ui/Text/Text";
 import { TextArea } from "@/shared/ui/TextArea/TextArea";
 import { CancelButton } from "./CancelButton";
 import { UpdateButton } from "./UpdateButton";
 import { Controller, useFormContext } from "react-hook-form";
-import { UpdateModalForm } from "../../model/update-favorite";
+import { UpdateModalForm } from "../model/update-favorite";
 
-export function UpdateModal({ favoriteId }: { favoriteId: number }) {
+export function ModalWrapper({ favoriteId }: { favoriteId: number }) {
   const { data } = useGetFavoriteDetail(favoriteId);
   const { control } = useFormContext<UpdateModalForm>();
 

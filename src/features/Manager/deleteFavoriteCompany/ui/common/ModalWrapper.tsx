@@ -2,7 +2,7 @@ import { Modal } from "@/shared/ui/Modal/Modal";
 import { ModalBody } from "./ModalBody";
 import { ModalHeader } from "./ModalHeader";
 import { ModalFooter } from "./ModalFooter";
-export function ModalContainer() {
+export function ModalWrapper() {
   return (
     <Modal>
       <div

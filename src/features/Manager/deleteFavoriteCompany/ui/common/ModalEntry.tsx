@@ -1,5 +1,5 @@
 import { useToastService } from "@/shared/ui/Toast/model/useToastService";
-import { ModalContainer } from "./ModalContainer";
+import { ModalWrapper } from "./ModalWrapper";
 import { useEffect } from "react";
 import { useCheckContext } from "../../../checkFavoriteCompany";
 
@@ -14,5 +14,5 @@ export function ModalEntry() {
     }
   }, [checkedIds, toast]);
 
-  return isEntry ? <ModalContainer /> : null;
+  return isEntry ? <ModalWrapper /> : null;
 }

@@ -2,7 +2,7 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-export function DetailLayout({ children }: LayoutProps) {
+export function ModalLayout({ children }: LayoutProps) {
   return (
     <div
       className="w-full md:w-1/2 h-screen bg-white flex flex-col flex justify-center items-center"

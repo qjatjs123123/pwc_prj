@@ -1,5 +1,5 @@
 
-export function DetailModalSkeleton() {
+export function ModalSkeleton() {
   return (
     <>
       {/* 제목 Skeleton */}

@@ -1,39 +1,33 @@
+"use client";
 import { useOverlay } from "@/shared/model/useOverlay";
-import { ReactNode } from "react";
 import { Modal } from "@/shared/ui/Modal/Modal";
-import { UpdateModal } from "./common/UpdateModal";
-import { UpdateLayout } from "./common/UpdateLayout";
+import { ModalWrapper } from "../ui/ModalWrapper";
+import { ModalLayout } from "../ui/ModalLayout";
 import { UpdateModalForm } from "../model/update-favorite";
 import { FormProvider, useForm } from "react-hook-form";
 import { useGetFavoriteDetail } from "@/entities/Manager/model/useGetFavoriteDetail";
 
-interface UpdateModalWrapperProps {
-  children: (show: () => void) => ReactNode;
-  favoriteId: number;
-}
-
-export function UpdateModalEntry({
-  children,
-  favoriteId,
-}: UpdateModalWrapperProps) {
+export function useUpdateFavoriteCompanyModal(favoriteId: number) {
   const { open } = useOverlay();
   const { data } = useGetFavoriteDetail(favoriteId);
+
   const methods = useForm<UpdateModalForm>({
     defaultValues: {
-      memo: data.memo,
+      memo: data?.memo ?? "",
     },
   });
 
-  const showUpdateModal = () =>
+  const show = () => {
     open(() => (
       <Modal align="right">
         <FormProvider {...methods}>
-          <UpdateLayout>
-            <UpdateModal favoriteId={favoriteId} />
-          </UpdateLayout>
+          <ModalLayout>
+            <ModalWrapper favoriteId={favoriteId} />
+          </ModalLayout>
         </FormProvider>
       </Modal>
     ));
+  };
 
-  return <>{children(showUpdateModal)}</>;
+  return { show };
 }

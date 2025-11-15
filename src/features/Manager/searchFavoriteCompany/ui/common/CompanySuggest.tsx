@@ -1,6 +1,6 @@
 import { useGetCompanies } from "@/entities/Manager";
 import { useEffect, useMemo } from "react";
-import { getCompanySuggestions } from "../lib/filter";
+import { getCompanySuggestions } from "../../lib/filter";
 
 interface CompanySuggestProps {
   value: string;

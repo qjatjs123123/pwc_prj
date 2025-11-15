@@ -1,1 +1,1 @@
-export { UpdateModalEntry } from "./ui/UpdateModalEntry";
+export { useUpdateFavoriteCompanyModal } from "./model/useUpdateFavoriteCompanyModal";

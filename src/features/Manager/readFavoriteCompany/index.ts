@@ -1,1 +1,1 @@
-export { DetailModalEntry } from "./ui/DetailModalEntry";
+export { useReadFavoriteCompanyModal } from "./model/useReadFavoriteCompanyModal";
