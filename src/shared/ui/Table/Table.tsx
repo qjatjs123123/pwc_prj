@@ -1,20 +1,13 @@
 import React from "react";
 import classNames from "classnames";
 import styles from "./Table.module.css";
-
-interface TableProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-type AlignType = "left" | "center" | "right";
-
-interface TableCellProps {
-  children: React.ReactNode;
-  align?: AlignType;
-  className?: string;
-  checked?: boolean;
-}
+import {
+  TableCellProps,
+  TableHeaderRowProps,
+  TableHeadProps,
+  TableProps,
+  TableRowProps,
+} from "./type";
 
 export function Table({ children, className }: TableProps) {
   return (
@@ -48,14 +41,13 @@ Table.Body = function TableBody({ children }: { children: React.ReactNode }) {
 Table.Row = function TableRow({
   children,
   checked = false,
-}: {
-  children: React.ReactNode;
-  checked?: boolean;
-}) {
+  onClick,
+}: TableRowProps) {
   return (
     <tr
+      onClick={onClick}
       className={classNames(
-        "hover:bg-gray-50 transition-colors  border border-[var(--color-line-400)]",
+        "hover:bg-gray-50 transition-colors  border border-[var(--color-line-400)] cursor-pointer",
         checked && styles.checked
       )}
     >
@@ -64,11 +56,7 @@ Table.Row = function TableRow({
   );
 };
 
-Table.HeaderRow = function TableHeaderRow({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+Table.HeaderRow = function TableHeaderRow({ children }: TableHeaderRowProps) {
   return <tr className="border-[var(--color-line-400)] border">{children}</tr>;
 };
 
@@ -76,11 +64,7 @@ Table.Head = function TableHead({
   children,
   width,
   className,
-}: {
-  children: React.ReactNode;
-  width?: string;
-  className?: string;
-}) {
+}: TableHeadProps) {
   return (
     <th
       className={classNames(
