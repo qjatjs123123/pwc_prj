@@ -33,8 +33,9 @@ export const TableCell = React.memo(function TableCell({
           <Table.Cell>
             <Button
               className="!p-0 !border-0"
-              onClick={() => {
+              onClick={(event) => {
                 mutation.mutate(item.id);
+                event.stopPropagation();
               }}
             >
               <TrashIcon />
