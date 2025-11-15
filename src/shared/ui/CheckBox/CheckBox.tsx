@@ -31,7 +31,10 @@ function CheckBox(props: Props) {
       <button
         type="button"
         className={classNames(styles.button, { [styles.checked]: checked })}
-        onClick={onChange}
+        onClick={(e) => {
+          onChange();
+          e.stopPropagation();
+        }}
       >
         <span className="w-full h-full flex justify-center items-center cursor-pointer font-bold">
           {checked && <CheckIcon />}
