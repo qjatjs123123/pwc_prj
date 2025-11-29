@@ -8,7 +8,7 @@ export default function Header() {
 
       <div>
         <Text type="body" weight="bold">
-          일반과제11
+          일반과제
         </Text>
       </div>
     </div>
