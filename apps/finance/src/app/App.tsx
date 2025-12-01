@@ -1,4 +1,8 @@
-import { TanStackProvider } from "@monorepo/core";
+import {
+  OverlayProvider,
+  PortalProvider,
+  TanStackProvider,
+} from "@monorepo/core";
 import { TableEntry } from "@/widgets";
 import { BrowserRouter } from "react-router-dom";
 import { Layout } from "@monorepo/ui";
@@ -8,9 +12,13 @@ export default function App() {
   return (
     <TanStackProvider>
       <BrowserRouter>
-        <Layout>
-          <TableEntry page="1" />
-        </Layout>
+        <PortalProvider>
+          <OverlayProvider>
+            <Layout>
+              <TableEntry page="1" />
+            </Layout>
+          </OverlayProvider>
+        </PortalProvider>
       </BrowserRouter>
     </TanStackProvider>
   );

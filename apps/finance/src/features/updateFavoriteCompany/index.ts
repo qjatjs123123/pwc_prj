@@ -1,0 +1,1 @@
+export { useUpdateFavoriteCompanyModal } from "./model/useUpdateFavoriteCompanyModal";

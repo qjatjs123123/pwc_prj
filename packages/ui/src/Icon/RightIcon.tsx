@@ -4,7 +4,7 @@ interface ChevronsRightIconProps extends React.SVGProps<SVGSVGElement> {
   color?: string;
 }
 
-const RightIcon: React.FC<ChevronsRightIconProps> = ({
+export const RightIcon: React.FC<ChevronsRightIconProps> = ({
   size = 24,
   color = "#9CA3AF",
 }) => (
@@ -24,5 +24,3 @@ const RightIcon: React.FC<ChevronsRightIconProps> = ({
     <path d="M9 18l6-6-6-6" />
   </svg>
 );
-
-export default RightIcon;

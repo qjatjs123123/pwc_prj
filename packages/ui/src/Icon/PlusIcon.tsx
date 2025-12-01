@@ -6,7 +6,7 @@ interface IconProps {
   color?: string;
 }
 
-const PlusIcon = ({ width = 20, height = 20, color = "white" }: IconProps) => (
+export const PlusIcon = ({ width = 20, height = 20, color = "white" }: IconProps) => (
   <svg
     width={width}
     height={height}
@@ -24,4 +24,3 @@ const PlusIcon = ({ width = 20, height = 20, color = "white" }: IconProps) => (
   </svg>
 );
 
-export default PlusIcon;

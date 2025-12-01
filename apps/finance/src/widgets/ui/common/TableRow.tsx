@@ -5,10 +5,8 @@ import { Table } from "@monorepo/ui";
 import type { FavoriteCompany } from "@/entities";
 import { Button } from "@monorepo/ui";
 import { formatDate } from "@monorepo/core";
-// import { useDeleteFavoriteCompanyOne } from "@/features/Manager/deleteFavoriteCompany";
-
-// import { formatDate } from "@/shared/lib/formatDate";
-// import { useReadFavoriteCompanyModal } from "@/features/Manager/readFavoriteCompany";
+import { useDeleteFavoriteCompanyOne } from "@/features/deleteFavoriteCompany";
+import { useReadFavoriteCompanyModal } from "@/features/readFavoriteCompany";
 
 interface FavoriteCompanyCellProps {
   item: FavoriteCompany;
@@ -21,11 +19,11 @@ export const TableRow = React.memo(function TableRow({
   checked,
   onChange,
 }: FavoriteCompanyCellProps) {
-  // const mutation = useDeleteFavoriteCompanyOne();
-  // const { show } = useReadFavoriteCompanyModal(item.id);
+  const mutation = useDeleteFavoriteCompanyOne();
+  const { show } = useReadFavoriteCompanyModal(item.id);
 
   return (
-    <Table.Row checked={checked}>
+    <Table.Row checked={checked} onClick={show}>
       <Table.Cell align="center">
         <CheckBox checked={checked} onChange={() => onChange(item.id)} />
       </Table.Cell>
@@ -35,7 +33,7 @@ export const TableRow = React.memo(function TableRow({
         <Button
           className="!p-0 !border-0"
           onClick={(event) => {
-            // mutation.mutate(item.id);
+            mutation.mutate(item.id);
             event.stopPropagation();
           }}
         >

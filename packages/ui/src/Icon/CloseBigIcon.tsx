@@ -1,6 +1,6 @@
 import React from "react";
 
-const CloseBigIcon = ({ width = 30, height = 30, stroke = "#3E3E3E" }) => {
+export const CloseBigIcon = ({ width = 30, height = 30, stroke = "#3E3E3E" }) => {
   return (
     <svg
       width={width}
@@ -20,4 +20,3 @@ const CloseBigIcon = ({ width = 30, height = 30, stroke = "#3E3E3E" }) => {
   );
 };
 
-export default CloseBigIcon;

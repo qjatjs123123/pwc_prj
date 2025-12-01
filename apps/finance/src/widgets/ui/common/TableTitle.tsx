@@ -1,5 +1,5 @@
-// import { CreateButton } from "@/features/Manager/createFavoriteCompany";
-// import { DeleteButton } from "@/features/Manager/deleteFavoriteCompany";
+import { CreateButton } from "@/features/createFavoriteCompany";
+import { DeleteButton } from "@/features/deleteFavoriteCompany";
 import { Text } from "@monorepo/ui";
 
 export function TableTitle() {
@@ -10,7 +10,6 @@ export function TableTitle() {
           관심기업 관리 서비스
         </Text>
         <Text
-
           type="body"
           className="text-[var(--color-label-700)]"
           weight="medium"
@@ -21,8 +20,8 @@ export function TableTitle() {
       </div>
 
       <div className="flex justify-end items-end gap-6">
-        {/* <CreateButton />
-        <DeleteButton /> */}
+        <CreateButton />
+        <DeleteButton />
       </div>
     </div>
   );

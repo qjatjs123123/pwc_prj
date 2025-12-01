@@ -1,5 +1,5 @@
-import { type FavoriteCompanyDTO } from "@/entities/api/dto/favorites-list-DTO";
-import { type FavoriteCompany } from "@/entities/model/favorites-list";
+import type { FavoriteCompanyDTO } from "../api/dto/favorites-list-DTO";
+import type { FavoriteCompany } from "../model/favorites-list";
 
 export function mapFavorites(dto: FavoriteCompanyDTO): FavoriteCompany {
   return {

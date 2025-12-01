@@ -1,0 +1,1 @@
+export { useReadFavoriteCompanyModal } from "./model/useReadFavoriteCompanyModal";

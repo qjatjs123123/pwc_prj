@@ -2,8 +2,8 @@ import type { FavoriteCompanyList } from "@/entities";
 import { Table as BaseTable } from "@monorepo/ui";
 import { TableHead } from "./TableHead";
 import { TableBody } from "./TableBody";
-// import { Empty } from "@/shared/ui/Empty/Empty";
-// import { Pagination } from "./Pagination";
+import { Empty } from "@/shared/ui/Empty/Empty";
+import { Pagination } from "./Pagination";
 
 export function Table({ data }: { data: FavoriteCompanyList }) {
   const isEmpty = data.items.length === 0;
@@ -14,7 +14,7 @@ export function Table({ data }: { data: FavoriteCompanyList }) {
 function TableEmpty() {
   return (
     <div className="mt-[40px]">
-      {/* <Empty /> */}
+      <Empty />
     </div>
   );
 }
@@ -26,7 +26,7 @@ function TableExist({ data }: { data: FavoriteCompanyList }) {
         <TableHead />
         <TableBody data={data} />
       </BaseTable>
-      {/* <Pagination /> */}
+      <Pagination />
     </>
   );
 }

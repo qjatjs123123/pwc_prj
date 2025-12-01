@@ -1,0 +1,18 @@
+.input {
+  width: 100%;
+  outline: none;
+  border: 0.5px solid var(--color-line-400);
+  padding: 0 1rem;
+  height: 48px;
+  border-radius: var(--radius-md);
+  font-size: var(--text-body-3);
+}
+.input[readonly] {
+  background-color: var(--color-background-alternative);
+}
+
+/* 포커스 */
+.input:focus {
+  border: 2px solid var(--input-color);
+}
+
