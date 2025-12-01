@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { federation } from "@module-federation/vite";
 
 export default defineConfig({
-  base: "http://localhost:5002/",
+  base: "apps/banner/vite.config.ts",
   plugins: [
     react(),
     tailwindcss(),
@@ -24,9 +24,9 @@ export default defineConfig({
   build: {
     target: "esnext",
   },
-  preview: {
-    port: 5002,
-  },
+  // preview: {
+  //   port: 5002,
+  // },
   server: {
     port: 5002, // dev 서버 포트 설정
   },
