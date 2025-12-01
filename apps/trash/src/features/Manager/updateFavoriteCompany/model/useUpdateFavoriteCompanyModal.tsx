@@ -3,7 +3,7 @@ import { useOverlay } from "@/shared/model/useOverlay";
 import { Modal } from "@/shared/ui/Modal/Modal";
 import { ModalWrapper } from "../ui/ModalWrapper";
 import { ModalLayout } from "../ui/ModalLayout";
-import { UpdateModalForm } from "../model/update-favorite";
+import { UpdateModalForm } from "./update-favorite";
 import { FormProvider, useForm } from "react-hook-form";
 import { useGetFavoriteDetail } from "@/entities/Manager/model/useGetFavoriteDetail";
 
