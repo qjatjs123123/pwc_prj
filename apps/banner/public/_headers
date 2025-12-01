@@ -1,2 +1,4 @@
-/*.js
+/*.js 
+  Access-Control-Allow-Origin: *
+/*.css
   Access-Control-Allow-Origin: *
