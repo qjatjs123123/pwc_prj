@@ -20,11 +20,11 @@ export default defineConfig({
           name: "mfe_banner",
           entry: "https://pwc-banner.netlify.app/remoteEntry.js",
         },
-        // mfe_finance: {
-        //   type: "module",
-        //   name: "mfe_finance",
-        //   entry: "http://localhost:5003/remoteEntry.js",
-        // },
+        mfe_finance: {
+          type: "module",
+          name: "mfe_finance",
+          entry: "https://pwc-fin.netlify.app/remoteEntry.js",
+        },
       },
       shared: ["react", "react-dom"],
     }),

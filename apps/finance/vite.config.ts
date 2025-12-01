@@ -5,7 +5,7 @@ import { federation } from "@module-federation/vite";
 import path from "path";
 
 export default defineConfig({
-  base: "http://localhost:5003/",
+  base: "https://pwc-fin.netlify.app/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
