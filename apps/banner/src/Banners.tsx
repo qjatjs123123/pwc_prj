@@ -1,16 +1,16 @@
 import { Text } from "@monorepo/ui";
-import { Banner as bannerImg } from "@monorepo/ui";
+import Banner  from "@monorepo/ui/public/banner.png"
 import "./global.css";
 
 interface BannerProps {
   title: string;
 }
 
-export default function Banner({ title }: BannerProps) {
+export default function Banners({ title }: BannerProps) {
   return (
     <div className="banner:relative banner:w-full banner:h-[25vh]">
       <img
-        src={bannerImg}
+        src={Banner}
         alt="배너 이미지"
         className="banner:object-cover banner:w-full banner:h-full"
       />

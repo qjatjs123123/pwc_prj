@@ -17,11 +17,3 @@ export { Button } from "./Button/Button";
 export { Text } from "./Text/Text";
 export { TextArea } from "./TextArea/TextArea";
 export { Input } from "./Input/Input";
-// const images = import.meta.globEager('./*.(png|webp)');
-// export const Logo = images['./logo.png'].default;
-// export const Banner = images['./banner.png'].default;
-// export const Close = images['./close.png'].default;
-// export const Sheet = images['./sheet.png'].default;
-// export const Box = images['./box.webp'].default;
-
-export * from "./assets"

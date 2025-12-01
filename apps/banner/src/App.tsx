@@ -1,4 +1,4 @@
-import  Banner  from "./Banner"
+import  Banner  from "./Banners"
 
 function App() {
 

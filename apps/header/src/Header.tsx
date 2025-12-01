@@ -1,5 +1,5 @@
 import { Text } from "@monorepo/ui";
-import { Logo } from "@monorepo/ui";
+import Logo from "@monorepo/ui/public/Logo.png";
 import "./global.css";
 
 export default function Header() {
