@@ -9,6 +9,16 @@ import { buildMakeTocFunction } from "../lib/build-makeToc-func.ts";
 import { findFinancialStatement } from "../lib/get-financial-data.ts";
 
 const app = express();
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+  next();
+});
 const router = express.Router();
 
 // /api/scrap GET 라우트
