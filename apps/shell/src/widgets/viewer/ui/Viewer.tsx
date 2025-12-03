@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 
-const Mfe_Viewer = React.lazy(() => import("mfe_viewer/App"));
+const Mfe_Viewer = React.lazy(() => import("mfe_viewer/Viewer"));
 
 export function Viewer() {
   return (

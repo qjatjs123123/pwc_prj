@@ -5,6 +5,7 @@ import { federation } from "@module-federation/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "https://pwc-viewer.netlify.app/",
   plugins: [
     react(),
     tailwindcss(),
@@ -12,7 +13,7 @@ export default defineConfig({
       name: "mfe-viewer",
       filename: "remoteEntry.js",
       exposes: {
-        "./App": "./src/App.tsx",
+        "./Viewer": "./src/App.tsx",
       },
       shared: {
         react: { singleton: true, strictVersion: true },
