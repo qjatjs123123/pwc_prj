@@ -18,6 +18,7 @@ export default defineConfig({
         react: { singleton: true, strictVersion: true },
         "react-dom": { singleton: true, strictVersion: true },
         "@monorepo/ui": { singleton: true, strictVersion: false },
+        "react-router-dom": { singleton: true, requiredVersion: "6.16.0" },
       },
     }),
   ],
