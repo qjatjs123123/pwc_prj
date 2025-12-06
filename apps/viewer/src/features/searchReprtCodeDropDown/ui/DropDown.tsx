@@ -1,3 +1,4 @@
+import { REPRT_CODE } from "@/entities/config/constants";
 import { getReprtArr } from "../lib/getter";
 
 interface DropDownProps {
@@ -23,7 +24,7 @@ export function DropDown({ onChange, setShowList }: DropDownProps) {
                 rounded-md
               "
         >
-          {reprt}
+          {REPRT_CODE[reprt]}
         </li>
       ))}
     </ul>

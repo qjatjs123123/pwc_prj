@@ -3,16 +3,19 @@ export interface CorpMap {
 }
 
 export const REPRT_CODE = {
-  "1분기보고서": 11013,
-  반기보고서: 11012,
-  "3분기보고서": 11014,
-  사업보고서: 11011,
+  "11013": "1분기보고서",
+  "11012": "반기보고서",
+  "11014": "3분기보고서",
+  "11011": "사업보고서",
 };
 
 export const FS_DIV = {
   OFS: "재무제표",
-  CFS: "연결재무제표"
+  CFS: "연결재무제표",
 };
+
+export type ReprtKey = keyof typeof REPRT_CODE;
+export type FsDivKey = keyof typeof FS_DIV;
 
 export const COMPANY_CODE: CorpMap = {
   삼성전자: "00126380",

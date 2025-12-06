@@ -10,9 +10,10 @@ export function CorpCodeInput() {
       key={"corp_code"}
       name={"corp_code"}
       control={methods.control}
-      render={() => (
+      rules={{ required: true }}
+      render={({ field }) => (
         <InputDropDownWrapper title={"기업명"}>
-          <CorpCodeDropDown />
+          <CorpCodeDropDown field={field} />
         </InputDropDownWrapper>
       )}
     />

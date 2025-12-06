@@ -1,6 +1,6 @@
 import { InputDropDownWrapper } from "@/shared/ui";
 import { Controller, useFormContext } from "react-hook-form";
-import { BsnsYearDropDown } from "./BsnsYearDropDown";
+import { FsDivDropDown } from "./FsDivDropDown";
 
 export function FsDivInput() {
   const methods = useFormContext();
@@ -10,9 +10,10 @@ export function FsDivInput() {
       key={"fs_div"}
       name={"fs_div"}
       control={methods.control}
-      render={() => (
+      rules={{ required: true }}
+      render={({field}) => (
         <InputDropDownWrapper title={"재무제표"}>
-          <BsnsYearDropDown />
+          <FsDivDropDown field={field}/>
         </InputDropDownWrapper>
       )}
     />

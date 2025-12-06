@@ -1,5 +1,5 @@
-import { REPRT_CODE } from "@/entities/config/constants";
+import { REPRT_CODE, type ReprtKey } from "@/entities/config/constants";
 
-export function getReprtArr(): string[] {
-  return Object.keys(REPRT_CODE);
+export function getReprtArr(): ReprtKey[] {
+  return Object.keys(REPRT_CODE) as ReprtKey[];
 }

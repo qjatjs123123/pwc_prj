@@ -31,7 +31,7 @@ export function DropDown({
           {filtered.map(({ name, code }) => (
             <li
               key={code}
-              onClick={() => {
+              onMouseDown={() => {
                 onChange(name);
                 setShowList(false);
               }}

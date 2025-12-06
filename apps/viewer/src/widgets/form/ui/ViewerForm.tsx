@@ -1,10 +1,9 @@
 import { SubmitButton } from "@/features/submitViewerForm";
-import { inputFieldData } from "@/shared/ui";
-import { Controller, useFormContext } from "react-hook-form";
-import { CorpCodeInput } from "./common/CorpCodeInput";
-import { BsnsYearInput } from "./common/BsnsYearInput";
-import { ReprtCodeInput } from "./common/ReprtCodeInput";
-import { FsDivInput } from "./common/FsDivInput";
+import { CorpCodeInput } from "./common/CorpCode/CorpCodeInput";
+import { BsnsYearInput } from "./common/BsnsYear/BsnsYearInput";
+import { ReprtCodeInput } from "./common/ReprtCode/ReprtCodeInput";
+import { FsDivInput } from "./common/FsDiv/FsDivInput";
+import { ErrorBoundary } from "react-error-boundary";
 
 export function ViewerForm() {
   return (
@@ -13,7 +12,11 @@ export function ViewerForm() {
       <BsnsYearInput />
       <ReprtCodeInput />
       <FsDivInput />
-      <SubmitButton />
+      <div className="flex justify-center pb-[30px]">
+        <ErrorBoundary fallback={<>111</>}>
+          <SubmitButton />
+        </ErrorBoundary>
+      </div>
     </form>
   );
 }

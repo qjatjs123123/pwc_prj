@@ -10,7 +10,8 @@
 }
 
 .button[disabled] {
-  background-color: var(--color-status-disable);
+  background-color: var(--color-status-disable) !important;
+  color: white !important;
   border: none !important;
   cursor: not-allowed;
   pointer-events: none;

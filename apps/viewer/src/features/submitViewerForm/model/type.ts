@@ -1,5 +1,5 @@
-export type ReprtCodeType = "11011" | "11012" | "11013" | "11014";
-export type FsDiv = "CFS" | "OFS";
+export type ReprtCodeType = "11011" | "11012" | "11013" | "11014" | "";
+export type FsDiv = "CFS" | "OFS" | "";
 
 export interface ViewerFormProps {
   corp_code: string; // 8자리

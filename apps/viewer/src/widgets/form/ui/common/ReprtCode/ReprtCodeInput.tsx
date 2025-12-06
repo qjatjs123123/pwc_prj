@@ -1,8 +1,8 @@
 import { InputDropDownWrapper } from "@/shared/ui";
 import { Controller, useFormContext } from "react-hook-form";
-import { BsnsYearDropDown } from "./BsnsYearDropDown";
+import { ReprtCodeDropDown } from "./ReprtCodeDropDown";
 
-export function BsnsYearInput() {
+export function ReprtCodeInput() {
   const methods = useFormContext();
 
   return (
@@ -10,9 +10,10 @@ export function BsnsYearInput() {
       key={"reprt_code"}
       name={"reprt_code"}
       control={methods.control}
-      render={() => (
+      rules={{ required: true }}
+      render={({ field }) => (
         <InputDropDownWrapper title={"보고서명"}>
-          <BsnsYearDropDown />
+          <ReprtCodeDropDown field={field} />
         </InputDropDownWrapper>
       )}
     />
