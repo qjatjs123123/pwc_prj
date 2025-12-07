@@ -10,8 +10,8 @@ export default function App() {
     <BrowserRouter>
       <TanStackProvider>
         <Header />
+        <Banner />
         <Routes>
-          <Banner />
           <Route path="/" element={<Finance />} />
           <Route path="/viewer" element={<Viewer />} />
           <Route path="*" element={<Finance />} /> {/* 기본 페이지 */}
