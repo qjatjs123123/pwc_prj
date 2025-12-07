@@ -4,6 +4,11 @@
     import {loadShare} from "@module-federation/runtime";
     const importMap = {
       
+        "@monorepo/core": async () => {
+          let pkg = await import("__mf__virtual/shell__prebuild___mf_0_monorepo_mf_1_core__prebuild__.js");
+            return pkg;
+        }
+      ,
         "@monorepo/ui": async () => {
           let pkg = await import("__mf__virtual/shell__prebuild___mf_0_monorepo_mf_1_ui__prebuild__.js");
             return pkg;
@@ -32,6 +37,36 @@
     }
       const usedShared = {
       
+          "@monorepo/core": {
+            name: "@monorepo/core",
+            version: "0.0.1",
+            scope: ["default"],
+            loaded: false,
+            from: "shell",
+            async get () {
+              if (false) {
+                throw new Error(`Shared module '${"@monorepo/core"}' must be provided by host`);
+              }
+              usedShared["@monorepo/core"].loaded = true
+              const {"@monorepo/core": pkgDynamicImport} = importMap
+              const res = await pkgDynamicImport()
+              const exportModule = {...res}
+              // All npm packages pre-built by vite will be converted to esm
+              Object.defineProperty(exportModule, "__esModule", {
+                value: true,
+                enumerable: false
+              })
+              return function () {
+                return exportModule
+              }
+            },
+            shareConfig: {
+              singleton: true,
+              requiredVersion: "^0.0.1",
+              
+            }
+          }
+        ,
           "@monorepo/ui": {
             name: "@monorepo/ui",
             version: "1.0.0",
@@ -204,7 +239,15 @@
                   entryGlobalName: "mfe_header",
                   name: "mfe_header",
                   type: "module",
-                  entry: "https:/localhost:5002/remoteEntry.js",
+                  entry: "https://pwc-header.netlify.app/remoteEntry.js",
+                  shareScope: "default",
+                }
+          ,
+                {
+                  entryGlobalName: "mfe_banner",
+                  name: "mfe_banner",
+                  type: "module",
+                  entry: "https://pwc-banner.netlify.app/remoteEntry.js",
                   shareScope: "default",
                 }
           
