@@ -18,13 +18,13 @@ export default function Headers() {
       <div className="header:flex header:gap-5">
         <Link to="/" onClick={() => handleClick("관심기업 관리 서비스")}>
           <Text type="body" weight={getWeight("/")}>
-            일반과제
+            관심기업
           </Text>
         </Link>
 
         <Link to="/viewer" onClick={() => handleClick("기업 재무제표 조회")}>
           <Text type="body" weight={getWeight("/viewer")}>
-            산업 전문화 과제
+            재무제표
           </Text>
         </Link>
       </div>
