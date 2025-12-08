@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:banner": "pnpm --filter ./apps/banner dev",
-    "dev:header": "pnpm --filter ./apps/header dev",
+    "dev:header": "pnpm --filter header dev",
     "dev:shell": "pnpm --filter ./apps/shell dev",
     "dev": "run-s dev:banner dev:header dev:shell"
   },

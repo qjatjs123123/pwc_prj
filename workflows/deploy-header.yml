@@ -1,0 +1,41 @@
+name: Deploy header to S3
+
+# path 변경 여부 확인되면 이 workflow 실행한다
+on:
+  push:
+    paths:
+      - "apps/header/**" # header 앱 디렉터리 변경여부 체크
+      - ".github/workflows/deploy-header.yml"
+
+# 워크플로우의 작업 단위
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # 우분투 환경에서 실행한다.
+
+    steps:
+      # 1. 코드 체크아웃 리포지토리 코드를 vm으로 가져오는 단계
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Node.js 25.1.0 수동 설치
+      - name: Install Node.js 25.1.0
+        run: |
+          curl -fsSL https://nodejs.org/dist/v25.1.0/node-v25.1.0-linux-x64.tar.xz -o node.tar.xz
+          tar -xJf node.tar.xz
+          sudo mv node-v25.1.0-linux-x64 /usr/local/node
+          sudo ln -s /usr/local/node/bin/node /usr/local/bin/node
+          sudo ln -s /usr/local/node/bin/npm /usr/local/bin/npm
+          node -v
+          npm -v
+
+      # 3. pnpm 설치
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      # 4. 의존성 설치 (pnpm workspace)
+      - name: Install dependencies
+        run: pnpm install
+
+      # 5. header 앱 빌드
+      - name: Build Header App
+        run: pnpm --filter apps/header run build
