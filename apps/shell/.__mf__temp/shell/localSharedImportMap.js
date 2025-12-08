@@ -220,34 +220,10 @@
     }
       const usedRemotes = [
                 {
-                  entryGlobalName: "mfe_viewer",
-                  name: "mfe_viewer",
-                  type: "module",
-                  entry: "https://pwc-viewer.netlify.app/remoteEntry.js",
-                  shareScope: "default",
-                }
-          ,
-                {
                   entryGlobalName: "mfe_banner",
                   name: "mfe_banner",
                   type: "module",
                   entry: "https://pwc-banner.netlify.app/remoteEntry.js",
-                  shareScope: "default",
-                }
-          ,
-                {
-                  entryGlobalName: "mfe_header",
-                  name: "mfe_header",
-                  type: "module",
-                  entry: "https://pwc-header.netlify.app/remoteEntry.js",
-                  shareScope: "default",
-                }
-          ,
-                {
-                  entryGlobalName: "mfe_finance",
-                  name: "mfe_finance",
-                  type: "module",
-                  entry: "https://pwc-fin.netlify.app/remoteEntry.js",
                   shareScope: "default",
                 }
           

@@ -5,28 +5,23 @@
     const importMap = {
       
         "@monorepo/core": async () => {
-          let pkg = await import("__mf__virtual/mfe_finance__prebuild___mf_0_monorepo_mf_1_core__prebuild__.js");
-            return pkg;
+          throw new Error(`Shared module '${"@monorepo/core"}' must be provided by host`);
         }
       ,
         "@monorepo/ui": async () => {
-          let pkg = await import("__mf__virtual/mfe_finance__prebuild___mf_0_monorepo_mf_1_ui__prebuild__.js");
-            return pkg;
+          throw new Error(`Shared module '${"@monorepo/ui"}' must be provided by host`);
         }
       ,
         "@tanstack/react-query": async () => {
-          let pkg = await import("__mf__virtual/mfe_finance__prebuild___mf_0_tanstack_mf_1_react_mf_2_query__prebuild__.js");
-            return pkg;
+          throw new Error(`Shared module '${"@tanstack/react-query"}' must be provided by host`);
         }
       ,
         "react": async () => {
-          let pkg = await import("__mf__virtual/mfe_finance__prebuild__react__prebuild__.js");
-            return pkg;
+          throw new Error(`Shared module '${"react"}' must be provided by host`);
         }
       ,
         "react-dom": async () => {
-          let pkg = await import("__mf__virtual/mfe_finance__prebuild__react_mf_2_dom__prebuild__.js");
-            return pkg;
+          throw new Error(`Shared module '${"react-dom"}' must be provided by host`);
         }
       
     }
@@ -39,7 +34,7 @@
             loaded: false,
             from: "mfe_finance",
             async get () {
-              if (false) {
+              if (true) {
                 throw new Error(`Shared module '${"@monorepo/core"}' must be provided by host`);
               }
               usedShared["@monorepo/core"].loaded = true
@@ -58,7 +53,7 @@
             shareConfig: {
               singleton: true,
               requiredVersion: "^0.0.1",
-              
+              import: false,
             }
           }
         ,
@@ -69,7 +64,7 @@
             loaded: false,
             from: "mfe_finance",
             async get () {
-              if (false) {
+              if (true) {
                 throw new Error(`Shared module '${"@monorepo/ui"}' must be provided by host`);
               }
               usedShared["@monorepo/ui"].loaded = true
@@ -88,7 +83,7 @@
             shareConfig: {
               singleton: true,
               requiredVersion: "^1.0.0",
-              
+              import: false,
             }
           }
         ,
@@ -99,7 +94,7 @@
             loaded: false,
             from: "mfe_finance",
             async get () {
-              if (false) {
+              if (true) {
                 throw new Error(`Shared module '${"@tanstack/react-query"}' must be provided by host`);
               }
               usedShared["@tanstack/react-query"].loaded = true
@@ -118,7 +113,7 @@
             shareConfig: {
               singleton: true,
               requiredVersion: "^5.0.0",
-              
+              import: false,
             }
           }
         ,
@@ -129,7 +124,7 @@
             loaded: false,
             from: "mfe_finance",
             async get () {
-              if (false) {
+              if (true) {
                 throw new Error(`Shared module '${"react"}' must be provided by host`);
               }
               usedShared["react"].loaded = true
@@ -148,7 +143,7 @@
             shareConfig: {
               singleton: true,
               requiredVersion: "^19.2.0",
-              
+              import: false,
             }
           }
         ,
@@ -159,7 +154,7 @@
             loaded: false,
             from: "mfe_finance",
             async get () {
-              if (false) {
+              if (true) {
                 throw new Error(`Shared module '${"react-dom"}' must be provided by host`);
               }
               usedShared["react-dom"].loaded = true
@@ -178,7 +173,7 @@
             shareConfig: {
               singleton: true,
               requiredVersion: "^19.2.0",
-              
+              import: false,
             }
           }
         

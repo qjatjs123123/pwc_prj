@@ -13,8 +13,7 @@
         }
       ,
         "@tanstack/react-query": async () => {
-          let pkg = await import("__mf__virtual/mfe_mf_2_viewer__prebuild___mf_0_tanstack_mf_1_react_mf_2_query__prebuild__.js");
-            return pkg;
+          throw new Error(`Shared module '${"@tanstack/react-query"}' must be provided by host`);
         }
       ,
         "react": async () => {
@@ -95,7 +94,7 @@
             loaded: false,
             from: "mfe-viewer",
             async get () {
-              if (false) {
+              if (true) {
                 throw new Error(`Shared module '${"@tanstack/react-query"}' must be provided by host`);
               }
               usedShared["@tanstack/react-query"].loaded = true
@@ -114,7 +113,7 @@
             shareConfig: {
               singleton: true,
               requiredVersion: "^5.0.0",
-              
+              import: false,
             }
           }
         ,
