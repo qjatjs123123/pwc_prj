@@ -30,6 +30,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      # 1. packages/* 빌드 (ui, core 등)
+      - name: Build shared packages
+        run: pnpm --filter "./packages/*" run build
+
       # 5. header 앱 빌드
       - name: Build Header App
         run: pnpm --filter header run build
